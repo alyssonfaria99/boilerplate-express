@@ -7,15 +7,13 @@ console.log('Hello World');
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/json', (req, res) => {
-    let message = 'Hello json';
-    let mySecret = process.env.MESSAGE_STYLE
-    console.log(mySecret);
-    if (mySecret === 'uppercase') {
-        message = message.toUpperCase();
+    let message = { message: 'Hello json' };
+    if (process.env.MESSAGE_STYLE === 'uppercase') {
+        message.message = message.message.toUpperCase();
     }
-    console.log({ message });
-    res.json({ mySecret });
-});
+    res.json(message);
+}
+);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
