@@ -3,8 +3,8 @@ let app = express();
 
 console.log('Hello World');
 
-app.use('/public', (req, res, next) => {
-    express.static(__dirname + '/public;');
+app.use(__dirname + '/public', (req, res, next) => {
+    express.static();
     next();
 })
 
