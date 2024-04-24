@@ -3,10 +3,7 @@ let app = express();
 
 console.log('Hello World');
 
-app.use(__dirname + '/public', (req, res, next) => {
-    express.static();
-    next();
-})
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
