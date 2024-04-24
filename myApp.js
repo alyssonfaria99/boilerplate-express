@@ -14,7 +14,7 @@ app.get('/json', (req, res) => {
         message = message.toUpperCase();
     }
     console.log({ message });
-    res.json({ message: process.env.MESSAGE_STYLE });
+    res.json({ mySecret });
 });
 
 app.get('/', (req, res) => {
