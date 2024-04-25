@@ -11,7 +11,7 @@ app.use((req, res, next) => {
     let caminho = req.path
     let ip = req.ip
     console.log(metodo + caminho + ip);
-    res.send(metodo + caminho + ip)
+    res.send(metodo + ' ' + caminho + ' ' + ' - ' + ip)
     next()
 });
 
