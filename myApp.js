@@ -10,7 +10,7 @@ app.use((req, res, next) => {
     let metodo = req.method
     let caminho = req.path
     let ip = req.ip
-    console.log(method + path + id);
+    console.log(metodo + caminho + ip);
     next()
 })
 
